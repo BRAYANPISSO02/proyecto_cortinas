@@ -1,32 +1,26 @@
-# _Sample project_
+**BRAYAN RICARDO PISSO RAMÍREZ**
+---
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+---
+---
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+# Sistema de Control Inteligente de Cortinas Automatizadas con ESP32, Servomotor y Web Interface
 
+> Proyecto modular basado en ESP32 que permite controlar cortinas mediante tres modos de operación: manual por potenciómetro, automático por umbral de temperatura (NTC) y apertura programada por horario. Incluye una interfaz web para configuración remota y actualización de credenciales WiFi.
 
+## Objetivo General
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
+Diseñar e implementar un sistema de automatización de cortinas basado en el microcontrolador ESP32, que permita su control inteligente mediante tres modos de operación (manual, por temperatura y por horario), integrando sensores analógicos, un servomotor y una interfaz web responsiva para la visualización de datos, selección de modos y configuración remota de parámetros y conectividad.
 
-## Example folder contents
+## Objetivos Específicos
 
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+- Controlar la apertura de una cortina utilizando un servomotor operado desde el ESP32 mediante señal PWM.
+- Habilitar tres modos de operación seleccionables:
+  - Manual: ajuste directo del ángulo de apertura mediante un potenciómetro.
+  - Automático: apertura o cierre en función de un umbral de temperatura configurado, medido con un sensor NTC.
+  - Programado: control de apertura con base en horarios definidos previamente.
+- Desarrollar una interfaz web responsiva alojada en el ESP32 para:
+  - Seleccionar el modo de operación.
+  - Visualizar la temperatura ambiente y el porcentaje de apertura actual.
+  - Configurar el umbral de temperatura y las credenciales WiFi.
+- Almacenar de forma persistente los parámetros de configuración (modo, umbral y red WiFi) utilizando la memoria NVS del ESP32.
